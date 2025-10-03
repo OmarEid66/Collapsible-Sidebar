@@ -1,40 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collapsible Sidebar</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Font Awesome for Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Collapsible Sidebar — Task 1</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <div class="logo">
-      <span>LOGO</span>
+<div class="app">
+  <aside id="sidebar" class="sidebar" aria-label="Main sidebar">
+    <div class="logo" tabindex="0">
+      <!-- Logo image -->
+      <img src="https://www.elevvo.tech/elevvo_og.png" alt="Elevvo Logo" class="logo-img" />
+      <div>
+        <div class="title">Elevvo</div>
+        <div class="small">Frontend Intern</div>
+      </div>
     </div>
-    <ul class="menu">
-      <li><i class="fas fa-home"></i><span>Home</span></li>
-      <li><i class="fas fa-user"></i><span>Profile</span></li>
-      <li><i class="fas fa-cog"></i><span>Settings</span></li>
-      <li><i class="fas fa-info-circle"></i><span>About</span></li>
-      <li><i class="fas fa-sign-out-alt"></i><span>Logout</span></li>
-    </ul>
-  </div>
 
-  <!-- Toggle Button -->
-  <button class="toggle-btn" id="toggleBtn">☰</button>
+    <nav role="navigation" aria-label="Primary">
+      <div class="nav-item" tabindex="0" role="button">
+        <svg viewBox="0 0 24 24"><path d="M3 10.5L12 4l9 6.5v7.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7.5z"/></svg>
+        <div class="nav-label">Home</div>
+      </div>
+      <div class="nav-item" tabindex="0" role="button">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+        <div class="nav-label">Projects</div>
+      </div>
+      <div class="nav-item" tabindex="0" role="button">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20c1.5-4 9-4 12 0"/></svg>
+        <div class="nav-label">Clients</div>
+      </div>
+      <div class="nav-item" tabindex="0" role="button">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+        <div class="nav-label">Reports</div>
+      </div>
+      <div class="nav-item" tabindex="0" role="button">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+        <div class="nav-label">Settings</div>
+      </div>
+    </nav>
 
-  <!-- Backdrop for mobile -->
-  <div class="backdrop" id="backdrop"></div>
+    <div class="toggle-wrap">
+      <button id="toggleBtn" class="toggle-btn" aria-pressed="false" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+        <span class="label">Collapse</span>
+      </button>
+    </div>
+  </aside>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1>Collapsible Sidebar</h1>
-    <p>Click the ☰ button to open or close the sidebar.</p>
-  </div>
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
 
-  <script src="script.js"></script>
+  <main class="main">
+    <div class="card">
+      <h2>Dashboard</h2>
+      <p>Welcome to your app interface. This project demonstrates a simple responsive sidebar layout with HTML, CSS, and JavaScript.</p>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

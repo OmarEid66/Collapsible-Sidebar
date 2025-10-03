@@ -1,20 +1,51 @@
-const sidebar = document.getElementById("sidebar");
-const toggleBtn = document.getElementById("toggleBtn");
-const backdrop = document.getElementById("backdrop");
+(function(){
+const sidebar = document.getElementById('sidebar');
+const toggle = document.getElementById('toggleBtn');
+const overlay = document.getElementById('overlay');
+const STORAGE_KEY = 'sidebar-collapsed';
 
-toggleBtn.addEventListener("click", () => {
-  if (window.innerWidth <= 768) {
-    // Mobile: slide in/out
-    sidebar.classList.toggle("mobile-open");
-    backdrop.classList.toggle("show");
-  } else {
-    // Desktop: collapse/expand
-    sidebar.classList.toggle("collapsed");
-  }
+
+let collapsed = localStorage.getItem(STORAGE_KEY) === '1';
+
+
+function applyState(){
+const isMobile = window.matchMedia('(max-width:767px)').matches;
+sidebar.classList.toggle('collapsed', collapsed && !isMobile);
+toggle.setAttribute('aria-pressed', String(collapsed));
+toggle.querySelector('.label').textContent = collapsed ? 'Expand' : 'Collapse';
+}
+
+
+function openMobile(){
+sidebar.classList.add('open');
+overlay.classList.add('show');
+}
+
+
+function closeMobile(){
+sidebar.classList.remove('open');
+overlay.classList.remove('show');
+}
+
+
+toggle.addEventListener('click', ()=>{
+const isMobile = window.matchMedia('(max-width:767px)').matches;
+if(isMobile){
+if(sidebar.classList.contains('open')) closeMobile(); else openMobile();
+} else {
+collapsed = !collapsed;
+localStorage.setItem(STORAGE_KEY, collapsed ? '1' : '0');
+applyState();
+}
 });
 
-// Close sidebar if backdrop clicked (mobile only)
-backdrop.addEventListener("click", () => {
-  sidebar.classList.remove("mobile-open");
-  backdrop.classList.remove("show");
-});
+
+overlay.addEventListener('click', closeMobile);
+
+
+window.addEventListener('resize', applyState);
+
+
+// Initial load
+applyState();
+})();
