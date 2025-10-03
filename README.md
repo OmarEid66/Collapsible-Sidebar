@@ -28,3 +28,7 @@ A responsive and interactive collapsible sidebar built with HTML, CSS, and JavaS
 - ⚡ Toggle Logic
 
 - 🎞️ CSS Animations
+
+🎁 Bonus
+
+- 📍The sidebar is responsive on mobile screens.
