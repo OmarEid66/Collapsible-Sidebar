@@ -3,28 +3,28 @@ A responsive and interactive collapsible sidebar built with HTML, CSS, and JavaS
 
 ✨ Features
 
--🖼️ Logo Placeholder at the top
+- 🖼️ Logo Placeholder at the top
 
--🔗 Navigation Links: 4–5 links with icons
+- 🔗 Navigation Links: 4–5 links with icons
 
--🔘 Toggle Button to open/close the sidebar
+- 🔘 Toggle Button to open/close the sidebar
 
--🎨 Smooth Animations for opening and closing
+- 🎨 Smooth Animations for opening and closing
 
--📱 Responsive Design for mobile screens
+- 📱 Responsive Design for mobile screens
 
 🛠️ Technologies
 
--HTML
+- HTML
 
--CSS
+- CSS
 
--JavaScript
+- JavaScript
 
 📚 Concepts Covered
 
--🧩 Component Layout
+- 🧩 Component Layout
 
--⚡ Toggle Logic
+- ⚡ Toggle Logic
 
--🎞️ CSS Animations
+- 🎞️ CSS Animations
