@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collapsible Sidebar</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <span>LOGO</span>
+    </div>
+    <ul class="menu">
+      <li><i class="fas fa-home"></i><span>Home</span></li>
+      <li><i class="fas fa-user"></i><span>Profile</span></li>
+      <li><i class="fas fa-cog"></i><span>Settings</span></li>
+      <li><i class="fas fa-info-circle"></i><span>About</span></li>
+      <li><i class="fas fa-sign-out-alt"></i><span>Logout</span></li>
+    </ul>
+  </div>
+
+  <!-- Toggle Button -->
+  <button class="toggle-btn" id="toggleBtn">☰</button>
+
+  <!-- Backdrop for mobile -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Collapsible Sidebar</h1>
+    <p>Click the ☰ button to open or close the sidebar.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
